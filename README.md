@@ -13,7 +13,7 @@ The maximum value of an unsigned 32-bit integer is 4,294,967,296, which is equiv
 with 2 GB reserved for the kernel and the remaining 2 GB for any applications.
 
 To prevent the game dangerously operating on data within the kernel's allocated space, a check was implemented in a function (found at address `0x00D947F3` in the game's binary) that
-tests whether the address of the object being processed during shader linkage is greater than or equal to `0x7FFFFFFF` (~2 GB), and if so, forces the process to fail, culminating in
+tests whether the address of the object being processed during shader linkage is greater than `0x7FFFFFFF` (~2 GB), and if so, forces the process to fail, culminating in
 the appearance of the 'pink soup'.
 
 While the game makes heavy use of 32-bit Windows functions, modern releases of Windows redirect these to updated, 64-bit versions of the same functions when they are called. This includes
@@ -28,8 +28,12 @@ This plugin therefore simply patches out these checks, allowing shaders to be li
   and further long-term testing across various hardware configurations is required to confirm this.
 
   To account for this, an alternative solution is proposed on pages 52&ndash;53 of my dissertation, that suggests doubling the address cap based on whether the game is patched to be Large 
-  Address Aware. Although this might more stable or 'safe', it means the 'pink soup' would still occur once this expanded cap is reached, but its appearance would be less frequent
-  than without this method.
+  Address Aware (also known as a 4 GB patch). Although this might more stable or 'safe', it means the 'pink soup' would still occur once this expanded cap is reached, but its appearance would 
+  be less frequent than without this method.
+
+  Realistically, Windows shouldn't allow 32-bit programs to allocate above `0xFFFFFFFF` if they are Large Address Aware (or `0x7FFFFFFF` if not) anyway, so any potential instability caused by
+  these limits being reached would be tied to whatever checks Maxis implemented to monitor the size of the heap and free/reallocate resources when necessary &mdash; considering that the original
+  hard-coded ceiling of `0x7FFFFFFF` can be reached fairly easily on modern hardware, it can be assumed these checks may not be efficient/aggressive enough.
 - An identical piece of failsafe logic is found within the function at address `0x00D948B6`. During my extensive debugging of the game for this project, this set of checks were
   never triggered, but it is possible that these may be executed, causing the 'pink soup' as a result. Code has been included within the plugin to remove these checks but has been
   commented out, as it is difficult for me to test due to it never being hit (at least on my machine).
