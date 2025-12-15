@@ -3,7 +3,7 @@
 An experimental patch for The Sims 2 based on the findings of my MSc [dissertation](A%20Recipe%20For%20Pink%20Soup.pdf), which (hopefully) fixes the issue of the 'pink soup' bug
 that frequently occurs when playing the game on 64-bit versions of Windows.
 
-Made for usage with The Sims 2: Ultimate Collection and [Sims2PRC](https://modthesims.info/d/648220/sims2rpc-modded-sims-2-launcher-for-mansion-and-garden.html).
+Made for usage with The Sims 2: Ultimate Collection and [Sims2RPC](https://modthesims.info/d/648220/sims2rpc-modded-sims-2-launcher-for-mansion-and-garden.html) with the 4 GB patch applied.
 
 ## Explanation
 Despite the common belief that the 'pink soup' bug is related to texture memory calculation mishaps, its cause is actually due to an intentional failsafe that stops shaders
