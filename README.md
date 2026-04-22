@@ -3,8 +3,8 @@
 An experimental patch for The Sims 2 based on the findings of my MSc [dissertation](A%20Recipe%20For%20Pink%20Soup.pdf), which (hopefully) fixes the issue of the 'pink soup' bug that frequently 
 occurs when playing the game on 64-bit versions of Windows.
 
-Made for use with The Sims 2: Ultimate Collection and [Sims2RPC](https://modthesims.info/d/648220/sims2rpc-modded-sims-2-launcher-for-mansion-and-garden.html) with the 4 GB
-patch applied.
+Made for use with The Sims 2: Ultimate Collection with the 4 GB patch applied, using either [Sims2RPC](https://modthesims.info/d/648220/sims2rpc-modded-sims-2-launcher-for-mansion-and-garden.html)
+or [Ultimate ASI Loader](https://github.com/ThirteenAG/Ultimate-ASI-Loader).
 
 ## Explanation
 Despite the common belief that the 'pink soup' bug is related to texture memory calculation mishaps, its cause is actually due to an intentional failsafe that prohibits shaders being linked to 
@@ -44,11 +44,17 @@ This plugin alleviates these restrictions, with two separate versions offering s
   something in a suboptimal manner.
 
 ## Installation
-1. Make sure you have [Sims2RPC](https://modthesims.info/d/648220/sims2rpc-modded-sims-2-launcher-for-mansion-and-garden.html) installed.
-2. Download one of the two versions of the plugin found under the '**Releases**' section of this repository.
-3. Move the downloaded plugin to the `\TSBin\mods` directory, found under wherever you have the Sims 2 installed to. For example, on my machine, the plugin would be moved to:
+**For Sims2RPC**
+1. Download one of the two versions of the plugin found under the [Releases](https://github.com/spockthewok/TS2MemCapRemover/releases) section of this repository.
+2. Move the downloaded plugin to the `\TSBin\mods` directory, found under wherever you have the Sims 2 installed to. For example, on my machine, the plugin would be moved to:
 
    `E:\Games\The Sims 2\Fun with Pets\SP9\TSBin\mods`
 
+**For Ultimate ASI Loader**
+1. Download Ultimate ASI Loader from [here](https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases/download/Win32-latest/dsound-Win32.zip).
+2. Extract `dsound.dll` from the zip file and place it in the game's `\TSBin` directory. On my machine, it would go here:
+
+   `E:\Games\The Sims 2\Fun with Pets\SP9\TSBin`
+3. Download one of the two version of this plugin and move it to the same `\TSBin` directory Ultimate ASI Loader was extracted to.
 ## Thanks
 [LazyDuchess](https://github.com/LazyDuchess), whose hooking library and various TS2 plugins I used as the basis/template for my code.
