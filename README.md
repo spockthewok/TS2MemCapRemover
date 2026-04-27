@@ -1,7 +1,7 @@
 # TS2 Memory Address Cap Remover
 ## About
-An experimental patch for The Sims 2 based on the findings of my MSc [dissertation](A%20Recipe%20For%20Pink%20Soup.pdf), which (hopefully) fixes the issue of the 'pink soup' bug
-that frequently occurs when playing the game on 64-bit versions of Windows.
+An experimental patch for The Sims 2 based on the findings of my MSc [dissertation](A%20Recipe%20For%20Pink%20Soup.pdf), which (hopefully) fixes the issue of the 'pink soup' bug that frequently
+occurs when playing the game on 64-bit versions of Windows.
 
 Made for use with The Sims 2: Ultimate Collection with the 4 GB patch applied, using either [Sims2RPC](https://modthesims.info/d/648220/sims2rpc-modded-sims-2-launcher-for-mansion-and-garden.html)
 or [Ultimate ASI Loader](https://github.com/ThirteenAG/Ultimate-ASI-Loader).
